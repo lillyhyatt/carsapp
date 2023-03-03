@@ -1,8 +1,11 @@
 import React from 'react'
+import TempHeader from '../components/TempHeader'
 
 function Add() {
   return (
-    <div>Add</div>
+    <>
+   <TempHeader />
+    </>
   )
 }
 
