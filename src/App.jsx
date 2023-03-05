@@ -19,6 +19,8 @@ import theme from './theme/theme'
 
 import Layout from './components/Layout'
 
+import { CarsProvider } from './components/contexts/car.context';
+
 
 function App() {
 
@@ -26,6 +28,7 @@ function App() {
 <Router>
   <CssBaseline />
   <ThemeProvider theme={theme}> 
+  <CarsProvider>
   <Routes>
   <Route path="/" element={<Layout/>}>
     <Route index element={<List />} />
@@ -34,6 +37,7 @@ function App() {
 <Route path="*" element={<NotFound />} />
   </Route>
 </Routes>
+</CarsProvider>
 </ThemeProvider>
 </Router>
   )
