@@ -13,43 +13,34 @@ import Typography from '@mui/material/Typography';
 
 import { CarsContext } from '../components/contexts/car.context';
 
+import CarsList from '../components/CarsList';
+
 
 function Home() {
 
-const {cars, fetchCars} = useContext(CarsContext);
+const {cars, fetchCars, deleteCar} = useContext(CarsContext);
 
 useEffect(() => {
 fetchCars();
 }, [fetchCars])
+
+
+
+const deleteHandler = (id) => {
+
+  deleteCar(id);
+  
+}
+
+
+
 
   return (
     <>
 <Typography variant="h3" component="h2">
   To dos
 </Typography>;
-<List>
-        {cars.map(({ name, bhp, avatar_url, _id }, i) => (
-          <ListItem key={i}>
-            <ListItemAvatar>
-              <Avatar alt="" src={avatar_url} />
-            </ListItemAvatar>
-            <ListItemText>
-              {name} (BHP: {bhp})
-            </ListItemText>
-            <IconButton
-              aria-label="update"
-              to={`/update/${_id}`}
-              component={Link}
-            >
-              <EditIcon />
-            </IconButton>
-            <IconButton aria-label="delete" onClick={() => deleteCar(_id)}>
-              <DeleteIcon />
-            </IconButton>
-          </ListItem>
-        ))}
-      </List>
-
+<CarsList cars={cars} deleteHandler={deleteHandler} />
     </>
   )
 }
