@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Typography from '@mui/material/Typography';
+
 import CarForm from '../components/forms/TodoForm';
 
+import { CarsContext } from '../components/contexts/car.context';
+
 function Add() {
+
+  const {addCar} = useContext(CarsContext)
+
   return (
     <>
    <Typography
@@ -12,7 +18,7 @@ function Add() {
       >
        Add todo
       </Typography>
-      <CarForm />
+      <CarForm submitHandler={addCar} />
     </>
   )
 }
