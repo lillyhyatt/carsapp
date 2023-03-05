@@ -9,27 +9,27 @@ function Update() {
   const { id } = useParams();
   const { cars, updateCar } = useContext(CarsContext);
 
-  const car = cars.find(({_id}) => id === _id );
-  
+  const car = cars.find(({ _id }) => id === _id);
+
   const navigate = useNavigate();
   const submitHandler = (data) => {
     updateCar(data);
-    navigate ('/');
-    
-      }
+    navigate('/');
+
+  }
 
   // send car and handler to form
   return (
     <>
-   <Typography
+      <Typography
         variant="h2"
         component="h1"
-        sx={{marginBottom: 2}}
+        sx={{ marginBottom: 2 }}
       >
-      update todo
+        update todo
       </Typography>
       <CarForm car={car} submitHandler={submitHandler} />
-     </>
+    </>
   )
 }
 

@@ -17,8 +17,8 @@ function DrawerAppBar(props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-<MobileNavigation handleDrawerToggle={handleDrawerToggle} mobileOpen={mobileOpen}  />
-<DesktopNavigation handleDrawerToggle={handleDrawerToggle} />
+      <MobileNavigation handleDrawerToggle={handleDrawerToggle} mobileOpen={mobileOpen} />
+      <DesktopNavigation handleDrawerToggle={handleDrawerToggle} />
     </Box>
   );
 }

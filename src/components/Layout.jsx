@@ -7,15 +7,15 @@ import Container from '@mui/material/Container';
 function Layout() {
   return (
     <>
-    <header> 
+      <header>
         <h1>To Do App</h1>
-        <TempHeader /> 
-         </header>
-    <main> 
-    <Container maxWidth="md">
-<Outlet />
-</Container>
-    </main>
+        <TempHeader />
+      </header>
+      <main>
+        <Container maxWidth="md">
+          <Outlet />
+        </Container>
+      </main>
     </>
   )
 }

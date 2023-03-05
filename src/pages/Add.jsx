@@ -6,21 +6,21 @@ import { useNavigate } from 'react-router-dom';
 
 function Add() {
 
-const {addCar} = useContext(CarsContext);
-const navigate = useNavigate();
-const submitHandler = (data) => {
-addCar(data);
-navigate ('/');
+  const { addCar } = useContext(CarsContext);
+  const navigate = useNavigate();
+  const submitHandler = (data) => {
+    addCar(data);
+    navigate('/');
 
   }
 
   return (
     <>
-   <Typography
+      <Typography
         variant="h2"
         component="h1"
       >
-       Add todo
+        Add todo
       </Typography>
       <CarForm submitHandler={submitHandler} />
     </>

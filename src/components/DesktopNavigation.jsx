@@ -11,49 +11,49 @@ import { useTheme } from '@mui/material/styles';
 
 
 
-function DesktopNavigation( { handleDrawerToggle=() => console.log ('no handleDrawToggle function'),}) {
+function DesktopNavigation({ handleDrawerToggle = () => console.log('no handleDrawToggle function'), }) {
 
     const theme = useTheme();
-const lightTextColor = theme.palette.common.white;
+    const lightTextColor = theme.palette.common.white;
 
-  return (
-    <>
-    
-        <AppBar component="nav">
-    <Toolbar>
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        edge="start"
-        onClick={handleDrawerToggle}
-        sx={{ mr: 2, display: { sm: 'none' } }}
-      >
-        <MenuIcon />
-      </IconButton>
-      <Typography
-        variant="h6"
-        component={NavLink}
-        to="/"
-        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, textDecoration: 'none', color: lightTextColor}}
-      >
-       ToDo App
-      </Typography>
-      <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-<Button sx={{ color: '#fff' }} component={NavLink} to="/add">
+    return (
+        <>
 
-Add To do
-          </Button>
-          
-      </Box>
-    </Toolbar>
-  </AppBar>
+            <AppBar component="nav">
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{ mr: 2, display: { sm: 'none' } }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography
+                        variant="h6"
+                        component={NavLink}
+                        to="/"
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, textDecoration: 'none', color: lightTextColor }}
+                    >
+                        ToDo App
+                    </Typography>
+                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                        <Button sx={{ color: '#fff' }} component={NavLink} to="/add">
 
-  <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box>
+                            Add To do
+                        </Button>
 
-    </>
-  )
+                    </Box>
+                </Toolbar>
+            </AppBar>
+
+            <Box component="main" sx={{ p: 3 }}>
+                <Toolbar />
+            </Box>
+
+        </>
+    )
 }
 
 export default DesktopNavigation;

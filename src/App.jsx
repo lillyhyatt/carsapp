@@ -25,21 +25,21 @@ import { CarsProvider } from './components/contexts/car.context';
 function App() {
 
   return (
-<Router>
-  <CssBaseline />
-  <ThemeProvider theme={theme}> 
-  <CarsProvider>
-  <Routes>
-  <Route path="/" element={<Layout/>}>
-    <Route index element={<List />} />
-<Route path="/add" element={<Add />} />
-<Route path="/update/:id" element={<Update />} />
-<Route path="*" element={<NotFound />} />
-  </Route>
-</Routes>
-</CarsProvider>
-</ThemeProvider>
-</Router>
+    <Router>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <CarsProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<List />} />
+              <Route path="/add" element={<Add />} />
+              <Route path="/update/:id" element={<Update />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </CarsProvider>
+      </ThemeProvider>
+    </Router>
   )
 }
 

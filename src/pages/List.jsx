@@ -18,29 +18,29 @@ import CarsList from '../components/CarsList';
 
 function Home() {
 
-const {cars, fetchCars, deleteCar} = useContext(CarsContext);
+  const { cars, fetchCars, deleteCar } = useContext(CarsContext);
 
-useEffect(() => {
-fetchCars();
-}, [fetchCars])
+  useEffect(() => {
+    fetchCars();
+  }, [fetchCars])
 
 
 
-const deleteHandler = (id) => {
+  const deleteHandler = (id) => {
 
-  deleteCar(id);
-  
-}
+    deleteCar(id);
+
+  }
 
 
 
 
   return (
     <>
-<Typography variant="h3" component="h2">
-  To dos
-</Typography>;
-<CarsList cars={cars} deleteHandler={deleteHandler} />
+      <Typography variant="h3" component="h2">
+        To dos
+      </Typography>;
+      <CarsList cars={cars} deleteHandler={deleteHandler} />
     </>
   )
 }
