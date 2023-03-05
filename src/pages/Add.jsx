@@ -20,7 +20,7 @@ function Add() {
         variant="h2"
         component="h1"
       >
-        Add todo
+        Add car
       </Typography>
       <CarForm submitHandler={submitHandler} />
     </>
