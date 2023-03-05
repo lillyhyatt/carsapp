@@ -36,12 +36,12 @@ function DesktopNavigation({ handleDrawerToggle = () => console.log('no handleDr
                         to="/"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, textDecoration: 'none', color: lightTextColor }}
                     >
-                        ToDo App
+                        Car App
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         <Button sx={{ color: '#fff' }} component={NavLink} to="/add">
 
-                            Add To do
+                            Add Car
                         </Button>
 
                     </Box>

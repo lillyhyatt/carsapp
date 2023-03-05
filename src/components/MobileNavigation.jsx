@@ -27,7 +27,7 @@ function MobileNavigation({ mobileOpen = false, handleDrawerToggle = () => conso
             >
                 <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
                     <Typography variant="h6" sx={{ my: 2 }}>
-                        ToDo App
+                        Car app
                     </Typography>
                     <Divider />
                     <List>
@@ -39,7 +39,7 @@ function MobileNavigation({ mobileOpen = false, handleDrawerToggle = () => conso
 
                         <ListItem disablePadding>
                             <ListItemButton sx={{ textAlign: 'center' }} component={NavLink} to="/add">
-                                <ListItemText primary={"Add Todo"} />
+                                <ListItemText primary={"Add Car"} />
                             </ListItemButton>
                         </ListItem>
 

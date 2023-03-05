@@ -1,6 +1,8 @@
 
-import React, { createContext, useState, useCallback } from "react";
+import React, { createContext, useState, useCallback, useContext } from "react";
 import { CARS_ENDPOINT, STORAGE_KEY } from "../../settings";
+import { UIContext } from "./UI.context";
+
 
 export const CarsContext = createContext({
     fetchCars: () => [],
@@ -15,6 +17,7 @@ export const CarsContext = createContext({
 
 
 export const CarsProvider = ({ children }) => {
+    const { showMessage } = useContext(UIContext);
     const [cars, setCars] = useState(() => {
         return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
     });
@@ -69,7 +72,10 @@ export const CarsProvider = ({ children }) => {
                 setCars(newCars);
 
             } catch (err) {
-                console.log(err);
+                showMessage({
+                    type: 'error',
+                    string: 'error loading cars',
+                  })
 
             }
         },

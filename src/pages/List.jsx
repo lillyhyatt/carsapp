@@ -1,17 +1,12 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from "react-router-dom";
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from '@mui/icons-material/Delete';
+
+
 import Typography from '@mui/material/Typography';
 
+
 import { CarsContext } from '../components/contexts/car.context';
+import { UIContext } from './../components/contexts/UI.context';
 
 import CarsList from '../components/CarsList';
 
@@ -19,6 +14,8 @@ import CarsList from '../components/CarsList';
 function Home() {
 
   const { cars, fetchCars, deleteCar } = useContext(CarsContext);
+  const { showMessage } = useContext(UIContext);
+
 
   useEffect(() => {
     fetchCars();
@@ -38,8 +35,10 @@ function Home() {
   return (
     <>
       <Typography variant="h3" component="h2">
-        To dos
-      </Typography>;
+        Cars
+      </Typography>
+
+
       <CarsList cars={cars} deleteHandler={deleteHandler} />
     </>
   )
